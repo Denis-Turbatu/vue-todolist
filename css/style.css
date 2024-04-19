@@ -1,0 +1,155 @@
+/* RESET CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* COMMON */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+hr{
+    border: solid 1px #fff;
+}
+
+.mark {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    vertical-align: middle;
+    line-height: 25px;
+    padding-left: 5px;
+}
+
+.check{
+    color: green;
+    border: solid 1px green;
+}
+
+.cross {
+    color: red;
+    border: solid 1px red;
+}
+
+
+header, .todo-thing>.items {
+    box-shadow: 0px 5px 10px rgb(216, 216, 216);
+}
+
+.editorial{
+    background-color: #09a9ed;
+}
+.q1-goal {
+    background-color: #ab5de6;
+}
+.recruiting {
+    background-color: #2cc6ab;
+}
+.mobile {
+    background-color: #ff9b00;
+}
+.website {
+    background-color: #ec4a9d;
+}
+.sales {
+    background-color: #a3d116;
+}
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    text-align: center;
+}
+
+/* MAIN */
+
+.container{
+    width: 80%;
+    margin: 50px auto;
+    background-color: #edf2f7;
+    border-radius: 10px 10px 0px 0px;
+}
+
+/* TOP-CONTAINER */
+.top-container{
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+} 
+
+.input-todo-object, .submit-btn {
+    vertical-align: middle;
+    border-radius: 5px;
+    padding: 9px;
+}
+
+.submit-btn{
+    box-shadow: 1px 1px 3px 2px grey;
+}
+
+.submit-btn:active{
+    box-shadow: 0px 0px 3px 2px grey;
+}
+
+.input-todo-object{
+    border: solid 1px grey;
+    font-size: 16px;
+}
+
+.submit-btn{
+    background-color: #14aaf5;
+    border: none;
+    color: #fff;
+}
+
+/* BOTTOM-CONTAINER */
+
+.daily-task{
+    padding: 50px;
+}
+
+.daily-task > li{
+    list-style-type: none;
+    color: #434851;
+}
+
+.daily-task li>h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.todo-thing>.items {
+    background-color: #fff;
+    border-radius: 5px;
+    list-style-type: none;
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.object, .tag {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: line-through black;
+    vertical-align: middle;
+}
+
+.tag {
+    padding: 6px;
+    border: none;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 14px;
+}
+
+.not-done {
+    text-decoration: none;
+}
+
+
+/* /BOTTOM-CONTAINER */
+
+/* /MAIN */
