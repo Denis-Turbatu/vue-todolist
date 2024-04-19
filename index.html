@@ -26,8 +26,8 @@
         <!-- TOP-CONTAINER -->
         <div class="top-container">
           <span class="span-form">
-            <input class="input-todo-object" type="text" placeholder="es: Fare la spesa..." v-model="newTodo.object">
-            <button class="submit-btn" @click="addTodo">Add Task</button>
+            <input class="input-todo-object" type="text" placeholder="es: Fare la spesa..." v-model="newTodo.object" @keyup.enter="addTodo">
+            <button class="submit-btn" @click="addTodo" type="submit">Add Task</button>
           </span>
         </div>
         <!-- /TOP-CONTAINER -->
@@ -40,62 +40,14 @@
               <li 
               class="items" 
               v-for="curItem, index in todo.object"
-              :key="index"
-              @click="doneItem(curItem, index)"
-              :class="{ 'done': curItem.done }"
+              @click="doneItem"
               > 
-              <span class="mark cross" @click="removeList">{{ todo.mark }}</span>
-              <span class="object">{{ todo.object[index] }}</span>
+              <span 
+                class="mark cross" 
+                @click="removeList(index)"
+              ><i class="fa-solid fa-circle-xmark"></i></span>
+              <span class="object" :class="done">{{ todo.object[index] }}</span>
               </li>
-              <!-- <li>
-                <h3>&#10148;OGGI</h3>
-                <ul class="todo-thing">
-                  <li class="items">
-                    <span class="mark check">&check;</span>
-                    <span class="object">Recruiting blog post</span>
-                    <span class="tag editorial">Editorial</span>
-                  </li>
-                  <li class="items">
-                    <span class="mark check">&check;</span>
-                    <span class="object">Mobile app launch</span>
-                    <span class="tag q1-goal">Q1 Goals</span>
-                  </li>
-                  <li class="items">
-                    <span class="mark cross">&cross;</span>
-                    <span class="object not-done">Interview Jonh H.</span>
-                    <span class="tag recruiting not-done">Recruiting</span>
-                  </li>
-                  <li class="items">
-                    <span class="mark check">&check;</span>
-                    <span class="object">Summit update to mobile storefronts</span>
-                    <span class="tag mobile">Mobile</span>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <h3>&#10148;PROSSIMI GIORNI</h3>
-                <ul class="todo-thing">
-                  <li class="items">
-                    <span class="mark cross">&cross;</span>
-                    <span class="object not-done">Schedule meeting with Alex</span>
-                  </li>
-                  <li class="items">
-                    <span class="mark check">&check;</span>
-                    <span class="object">Homepage refresh</span>
-                    <span class="tag website">Website</span>
-                  </li>
-                  <li class="items">
-                    <span class="mark check">&check;</span>
-                    <span class="object">Onboard new Sales team members</span>
-                    <span class="tag sales">Sales</span>
-                  </li>
-                  <li class="items">
-                    <span class="mark check">&check;</span>
-                    <span class="object">Review editorial calendar</span>
-                    <span class="tag editorial">Editorial</span>
-                  </li>
-                </ul>
-              </li> -->
             </ul>
             <!-- /BOTTOM-CONTAINER -->
       </div>

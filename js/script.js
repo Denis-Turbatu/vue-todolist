@@ -5,12 +5,11 @@ const {createApp} = Vue;
 createApp({
     data(){
         return{
+            done: "",
             todo: {
-                mark: "",
                 object: [],
-                tag: "",
-                done: "",
             },
+            
             newTodo: {
                 mark: "",
                 object: "",
@@ -21,7 +20,6 @@ createApp({
     methods: {
         addTodo: function(){
             this.todo.object.push(this.newTodo.object);
-            this.todo.mark = `X`;
             this.todo.done = false;
 
             this.newTodo.mark = "";
@@ -29,13 +27,13 @@ createApp({
             this.newTodo.tag = "";
         },
         doneItem: function(curItem, index) {
-            this.todo.mark = true;
-            this.todo.done = true;
-            if (this.todo.mark == true && this.todo.done == true) {
-                this.todo.mark = `V`;
+            if (this.done == "") {
+                this.done = "done";
+            } else if (this.done == "done") {
+                this.done = "";
             }
         },
-        removeList: function (curItem, index) {
+        removeList: function (index) {
             this.todo.object.splice(index, 1)
         }
     }
