@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Toboolist</title>
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Toboolist</title>
+</head>
+
+<body>
 
 
-    <!-- Header -->
-    <header class="header">
-      <img id="logo" src="./assets/img/logo.png" alt="logo-toboolist">
-    </header>
-    <!-- /Header -->
+  <!-- Header -->
+  <header class="header">
+    <img id="logo" src="./assets/img/logo.png" alt="logo-toboolist">
+  </header>
+  <!-- /Header -->
 
 
-    <!-- Main -->
-    <div id="app">
-      <main>
-        <!-- CONTAINER -->
-        <div class="container">
-          <!-- TOP-CONTAINER -->
-          <div class="top-container">
-            <span class="span-form">
-              <input
-                class="input-todo-object"
-                type="text"
-                placeholder="es: Fare la spesa..."
-                v-model="newTodo.object"
-                >
-              <button class="submit-btn" @click="addTodo">Add Task</button>
-            </span>
-          </div>
-          <!-- /TOP-CONTAINER -->
-          <hr>
-          <!-- BOTTOM-CONTAINER -->
-            <ul class="daily-task">
-              <li>
-                <h3>&#10148;TASK PRECEDENTI</h3>
-                <ul class="todo-thing">
-                  <li class="items">
-                    <span class="mark check">&check;</span>
-                    <span class="object">Quarterly Newsletter</span>
-                    <span class="tag editorial">Editorial</span>
-                  </li>
-                </ul>
+  <!-- Main -->
+  <div id="app">
+    <main>
+      <!-- CONTAINER -->
+      <div class="container">
+        <!-- TOP-CONTAINER -->
+        <div class="top-container">
+          <span class="span-form">
+            <input class="input-todo-object" type="text" placeholder="es: Fare la spesa..." v-model="newTodo.object">
+            <button class="submit-btn" @click="addTodo">Add Task</button>
+          </span>
+        </div>
+        <!-- /TOP-CONTAINER -->
+        <hr>
+        <!-- BOTTOM-CONTAINER -->
+        <ul class="daily-task">
+          <li>
+            <h3>&#10148;TASK DA COMPLETARE</h3>
+            <ul class="todo-thing">
+              <li 
+              class="items" 
+              v-for="curItem, index in todo.object"
+              :key="index"
+              @click="doneItem(curItem, index)"
+              :class="{ 'done': curItem.done }"
+              > 
+              <span class="mark cross" @click="removeList">{{ todo.mark }}</span>
+              <span class="object">{{ todo.object[index] }}</span>
               </li>
               <!-- <li>
                 <h3>&#10148;OGGI</h3>
@@ -97,15 +97,18 @@
                 </ul>
               </li> -->
             </ul>
-          <!-- /BOTTOM-CONTAINER -->
-        </div>
-        <!-- /CONTAINER -->
-      </main>
-    </div>
-    <!-- /Main -->
+            <!-- /BOTTOM-CONTAINER -->
+      </div>
+      <!-- /CONTAINER -->
+    </main>
+  </div>
+  <!-- /Main -->
 
-    <!-- custom js -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./js/script.js"></script>
-  </body>
+  <!-- fontAwesome -->
+  <script src="https://kit.fontawesome.com/84174ae206.js" crossorigin="anonymous"></script>
+  <!-- custom js -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
 </html>

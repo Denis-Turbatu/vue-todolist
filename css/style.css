@@ -131,9 +131,18 @@ header, .todo-thing>.items {
     margin: 10px 0;
 }
 
+.items{
+    cursor: pointer;
+}
+
+.items.done {
+    text-decoration: line-through;
+}
+
+
 .object, .tag {
     font-family: Arial, Helvetica, sans-serif;
-    text-decoration: line-through black;
+    margin-inline: 15px;
     vertical-align: middle;
 }
 
