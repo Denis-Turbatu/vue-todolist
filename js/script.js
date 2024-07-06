@@ -36,7 +36,9 @@ createApp({
             }
         },
         removeList: function (index) {
-            this.todo.object.splice(index, 1)
+            this.todo.object.splice(index, 1);
+            this.todo.tag.splice(index, 1);
+            this.todo.isDone.splice(index, 1);
         }
     }
 }).mount('#app');

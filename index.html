@@ -41,7 +41,7 @@
             <ul class="todo-thing">
 
               <li class="items" v-for="curItem, index in todo.object" @click="doneItem(index)">
-                <span class="mark cross" @click="removeList(index)"><i class="fa-solid fa-circle-xmark"></i></span>
+                <span class="mark cross" @click.stop="removeList(index)"><i class="fa-solid fa-trash trash"></i></span>
                 <span class="object" :class="{ done: this.todo.isDone[index] }">{{ todo.object[index] }}</span>
                 <span class="tag editorial"> {{ todo.tag[index] }} </span>
               </li>
