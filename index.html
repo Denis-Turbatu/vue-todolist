@@ -28,7 +28,14 @@
           <span class="span-form">
             <input class="input-todo-object" type="text" placeholder="es: Fare la spesa..." v-model="newTodo.object"
               @keyup.enter="addTodo">
-            <input class="input-todo-tag" type="text" placeholder="Tag" v-model="newTodo.tag" @keyup.enter="addTodo">
+
+            <select class="input-todo-tag" type="text" placeholder="Tag" v-model="newTodo.tag" @keyup.enter="addTodo">
+              <option value="">Seleziona</option>
+              <option value="personale">Personale</option>
+              <option value="lavoro">Lavoro</option>
+              <option value="altro">Altro</option>
+              <option value="urgente">Urgente</option>
+            </select>
             <button class="submit-btn" @click="addTodo" type="submit">Add Task</button>
           </span>
         </div>
@@ -43,7 +50,7 @@
               <li class="items" v-for="curItem, index in todo.object" @click="doneItem(index)">
                 <span class="mark cross" @click.stop="removeList(index)"><i class="fa-solid fa-trash trash"></i></span>
                 <span class="object" :class="{ done: this.todo.isDone[index] }">{{ todo.object[index] }}</span>
-                <span class="tag editorial"> {{ todo.tag[index] }} </span>
+                <span class="tag text-md" :class="this.todo.tag[index]"> {{ todo.tag[index] }} </span>
               </li>
 
             </ul>

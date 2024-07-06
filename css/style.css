@@ -23,24 +23,32 @@ header, .todo-thing>.items {
     color: red;
 }
 
-.editorial{
+.text-md{
+    font-weight: 600;
+}
+
+.d-none{
+    display: none;
+}
+
+.personale{
     background-color: #09a9ed;
 }
-.q1-goal {
-    background-color: #ab5de6;
+.urgente {
+    background-color: #e65d5d;
 }
-.recruiting {
+.altro {
     background-color: #2cc6ab;
 }
-.mobile {
+.lavoro {
     background-color: #ff9b00;
 }
-.website {
+/* .website {
     background-color: #ec4a9d;
 }
 .sales {
     background-color: #a3d116;
-}
+} */
 
 /* HEADER */
 
