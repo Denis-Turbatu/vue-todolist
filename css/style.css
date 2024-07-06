@@ -72,6 +72,16 @@ header, .todo-thing>.items {
     padding: 9px;
 }
 
+.input-todo-tag{
+    vertical-align: middle;
+    border-radius: 5px;
+    padding: 9px;
+    width: 100px;
+    border: solid 1px grey;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
 .submit-btn{
     box-shadow: 1px 1px 3px 2px grey;
 }
@@ -83,7 +93,7 @@ header, .todo-thing>.items {
 .input-todo-object{
     border: solid 1px grey;
     font-size: 16px;
-    margin-right: 15px;
+    margin-right: 5px;
 }
 
 .submit-btn{
@@ -139,6 +149,7 @@ header, .todo-thing>.items {
     border-radius: 15px;
     color: #fff;
     font-size: 14px;
+    text-align: center;
 }
 
 .not-done {
